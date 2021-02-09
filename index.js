@@ -22,12 +22,12 @@ const connection = mysql.createConnection({
   connection.connect((err) => {
     if (err) throw err;
     console.log(`connected as id ${connection.threadId}`);
-    connection.end();
+    track();
   });
 
   // prompts listed when the app is entered in CLI
 
-  const beginApp = () => {
+  const track = () => {
     inquirer.prompt (
       {
         type: 'list',
@@ -44,11 +44,55 @@ const connection = mysql.createConnection({
 
   //function for viewing employees
 
-  //function for viewing employees by department
+  const viewEmployee = () => {
+    connection.query('SELECT first_name, last_name, role_id, manager_id FROM employee', (err, res) => {
+      if (err) throw err
+      //log results in table format
+      console.table(res)
+      //restart the prompts
+      track()      
+    })
+  }
 
-  //function for viewing employees by manager
+  //function for viewing employees by department using JOIN
 
+  const viewEmpDep = () => {
+    connection.query('')
+  }
+
+  //function for viewing employees by manager using JOIN
+   
   //function for adding an employee
+
+  const addEmployee = () => {
+    inquirer.prompt([
+      {
+        type: 'input',
+        name: 'first',
+        message: 'What is the first name of the employee you want to add?'
+      },
+      {
+        type: 'input',
+        name: 'last',
+        message: 'What is the last name of the employee you want to add?'
+      },
+      {
+        type: 'input',
+        name: 'role',
+        message: 'What is the role I.D assigned to the employee you want to add?'
+      },
+      {
+        type: 'input',
+        name: 'manager',
+        message: 'What is the I.D of the manager overseeing the employee you want to add?'
+      }
+    ]).then((answer) => {
+      connection.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?)', [answer.first, answer.last, answer.role, answer.manager], (err, res) => {
+        if (err) throw err
+        console.table(res)
+        track()
+    })
+  }
 
   //function for removing an employee
 
