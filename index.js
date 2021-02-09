@@ -37,9 +37,33 @@ const connection = mysql.createConnection({
       }
     ).then((answer) => {
       //list of switch cases to begin different functions related to the selection
-
+      switch(answer.choices) {
+        case 'View all employees':
+          viewEmployee()
+          break
+        case 'View all employees by department':
+          viewEmpDep()
+          break
+        case 'View all employees by manager':
+          viewEmpMan()
+          break
+        case 'Add employee':
+          addEmployee()
+          break
+        case 'Remove employee':
+          removeEmployee()
+          break
+        case 'Update employee role':
+          updateEmployee()
+          break
+        case 'End':
+          console.log('Leaving app now, thank you!')
+          return
+          break
+        default: 
+          console.log('Sorry that is not an option')    
+      }
     })
-
   }
 
   //function for viewing employees
@@ -61,6 +85,10 @@ const connection = mysql.createConnection({
   }
 
   //function for viewing employees by manager using JOIN
+
+  const viewEmpMan = () => {
+
+  }
    
   //function for adding an employee
 
@@ -96,7 +124,15 @@ const connection = mysql.createConnection({
 
   //function for removing an employee
 
+  const removeEmployee = () => {
+
+  }
+
   //function for updating employee role
+
+  const updateEmployee = () => {
+
+  }
 
   
   
