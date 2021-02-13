@@ -3,7 +3,7 @@
 
 USE employee_db;
 -- DEPARTMENT TABLE
-INSERT INTO department (name) VALUE ('Coaching Staff'), ('Front Office'), ('Athletes'), ('Equipment and Video'), ('Athlete Performance');
+INSERT INTO department (name) VALUE ('Coaching Staff'), ('Front Office'), ('Athletes'), ('Athlete Performance');
 -- ROLE TABLE
 INSERT INTO role (title, salary, department_id) VALUE ('Head Coach', 350000.00, 1), ('Offensive Coordinator', 2000000.00, 1), ('Deffensive Coordinator', 2000000.00, 1);
 INSERT INTO role (title, salary, department_id) VALUE ('Owner', 3000000.00, 2), ('General Manager', 1500000.00, 2), ('Director of Player Personnel', 500000.00, 2);
@@ -18,10 +18,9 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Tom', 
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Rob', 'Gronkowski', 9, 1);
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Jon', 'Spytek', 6, 2);
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Jason', 'Licht', 5, 2);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Byron', 'Leftwich', 7, );
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 8, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 9, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 10, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 11, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 12, 1);
-INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('', '', 13, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Byron', 'Leftwich', 2, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Todd', 'Bowles', 3, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Antonio', 'Brown', 8, 1);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Bobby', 'Slater', 11, 3);
+INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUE ('Anthony', 'Piroli', 12, 3);
+
