@@ -3,14 +3,16 @@ const inquirer = require('inquirer')
 const consoleTable = require('console.table')
 const figlet = require('figlet')
 
-// figlet('Employee Tracker', function (err, data) {
-//   if (err) {
-//     console.log('Something went wrong...');
-//     console.dir(err);
-//     return;
-//   }
-//   console.log(data)
-// });
+
+
+figlet('Employee Tracker', function (err, data) {
+  if (err) {
+    console.log('Something went wrong...');
+    console.dir(err);
+    return;
+  }
+  console.log(data)
+});
 
 
 //connection to mysql
@@ -24,7 +26,7 @@ const connection = mysql.createConnection({
   user: 'root',
 
   // Be sure to update with your own MySQL password!
-  password: '',
+  password: 'Bo$$2020',
   database: 'employee_db',
 });
 
@@ -61,15 +63,11 @@ const track = () => {
         addEmployee()
         break
       case 'Remove employee':
-        removeEmployee()
-        break
-      case 'Update employee role':
-        updateEmployee()
+        deleteEmployee()
         break
       case 'End':
         console.log('Leaving app now, thank you!')
-        return
-        break
+        process.exit(0)
       default:
         console.log('Sorry that is not an option')
     }
@@ -103,7 +101,7 @@ const viewDep = () => {
 //function for viewing all the roles
 
 const viewRoles = () => {
-  connection.query('SELECT * FROM roles', (err, res) => {
+  connection.query('SELECT * FROM role', (err, res) => {
     if (err) throw err
     //log results in table format
     console.table(res)
@@ -111,9 +109,9 @@ const viewRoles = () => {
     track()
   })
 }
-  
 
-//function for viewing employees by manager using JOIN
+
+
 
 
 //function for adding an employee
@@ -147,18 +145,8 @@ const addEmployee = () => {
       track()
     })
   })
- }
+}
 
-  //function for removing an employee
 
-  // const removeEmployee = () => {
-
-  // }
-
-  //function for updating employee role
-
-  // const updateEmployee = () => {
-
-  // }
 
 
