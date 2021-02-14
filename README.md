@@ -3,7 +3,7 @@ Manage a company's employees using node, inquirer, and MySQL
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Employee Tracker](assets\demo.webm)
+![Employee Tracker](./assets/DMO.mp4)
 
 ## Description
 As a business owner
